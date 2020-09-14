@@ -24,6 +24,7 @@ public:
         } else if (sum < target) {
 
             for (size_t i = idx_op ; i < candidates.size() ; i++) {
+                if((sum + candidates[i]) > target) break;
                 if (i != idx_op && candidates[i] == candidates[i - 1]) continue;
 
                 pad->emplace_back(candidates[i]);
